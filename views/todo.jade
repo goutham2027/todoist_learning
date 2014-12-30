@@ -1,0 +1,74 @@
+
+
+extends layout
+block content
+    .navbar.navbar-default
+        .container-fluid
+            .navbar-brand
+                i.fa.fa-check
+                span Todoist
+    .container(ng-controller="todoCtrl")#todoCtrl
+        .col-xs-12.col-sm-5.text-center.add-task
+            .row
+                h3.text-uppercase Add Task
+                form(name="addtask", role="form" novalidate)
+                    .col-xs-12.form-group
+                        label.col-xs-12 Task
+                        input#task(type='text' placeholder='Enter your task' ng-model="item.task" ng-required).col-xs-12.col-sm-7.form-control
+                    .col-xs-12.form-group
+                        label.col-xs-12 End Date
+                        div.input-group.date#datepicker
+                            input(type='text' data-date-format="YYYY/MM/DD" datepicker ng-model="item.date" ).form-control#dateinp
+                            span.input-group-addon
+                                i.glyphicon.glyphicon-calendar
+                    .col-xs-12.form-group
+                        label.col-xs-12.control-label End Time
+                        div.input-group.date#timepicker
+                            input.form-control(type="text"  timepicker ng-model="item.tasktime"  )
+                            span.input-group-addon
+                                i.glyphicon.glyphicon-time
+                        //input(type='time').col-xs-12.col-sm-7.form-control
+                    .col-xs-12.form-group.text-center
+                        button.btn.btn-primary(ng-click="addTask(item)") Add Task
+                        span(ng-class="{{status}}" ng-show="{{show}}") {{message}}
+                {{ item }}
+            hr
+            .row.hidden-xs
+                div.summary.center-block
+                    h3.text-uppercase Day's Summary
+                    div.col-xs-4
+                        span {{summarydisp.new}}
+                        p.text-uppercase new
+                    div.col-xs-4
+                        span.summary-delayed {{summarydisp.delayed}}
+                        p.text-uppercase Delayed
+                    div.col-xs-4
+                        span.summary-delayed {{summarydisp.carry}}
+                        p.text-uppercase Carry
+
+
+        .col-xs-12.col-sm-6.todolist
+            div
+                h4.text-center.day Today {{ today | date }}
+                div.todolist-container
+                    ul
+                        li(ng-repeat="todo in todolist" ng-show="showToday($index)")
+                            span.circle(ng-class="colorcode($index)", ng-click="updateTaskStatus($index)")
+                            p.todo  {{todo.task}}
+                                strong.leftpadding10 {{todo.enddatetime | date }}
+
+
+            div
+                h4.text-center.day Old
+                div.todolist-container
+                    ul
+                        li(ng-repeat="todo in todolist" ng-hide="showToday($index)")
+                            span.circle(ng-class="colorcode($index)", ng-click="updateTaskStatus($index)")
+                            p.todo  {{todo.task}}
+                                strong.leftpadding10 {{todo.enddatetime | date }}
+
+
+
+
+
+

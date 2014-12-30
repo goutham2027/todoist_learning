@@ -1,0 +1,123 @@
+* {
+  margin: 0px;
+  padding: 0px; }
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+hr {
+  border-top: 2px solid #d9d9d9; }
+
+a {
+  color: #00B7FF; }
+
+.container {
+  margin-left: 0;
+  margin-right: 0; }
+
+.navbar {
+  border: 0; }
+
+.navbar-default {
+  background-color: #8A572A;
+  height: 60px;
+  border-radius: 0; }
+
+.navbar-brand span {
+  font-size: 23px;
+  letter-spacing: 1px;
+  color: #fff; }
+.navbar-brand i {
+  color: #fff;
+  font-size: 23px;
+  padding-right: 10px; }
+
+.dir-rtl {
+  direction: rtl; }
+
+.add-task h3 {
+  color: #b6b6b6;
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  word-spacing: -2px; }
+
+.add-task form label {
+  font-weight: lighter;
+  font-size: 12px; }
+
+.summary div {
+  line-height: 70px; }
+  .summary div span {
+    display: block;
+    border: 1px solid black;
+    height: 70px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    color: #5c5c5c;
+    font-weight: bold; }
+  .summary div p {
+    font-size: 13px;
+    line-height: normal; }
+
+.summary-delayed {
+  color: red !important; }
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .todolist {
+    border-left: none; } }
+@media (min-width: 768px) {
+  .todolist {
+    border-left: 2px solid #979797;
+    height: 450px; } }
+.todolist ul {
+  list-style: none; }
+
+.circle {
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  height: 15px;
+  width: 15px;
+  top: 3px; }
+
+.day {
+  color: #6d6d6d;
+  font-size: 15px;
+  font-weight: 700; }
+
+.bgRed, .delayed {
+  background: red; }
+
+.bgGreen, .done {
+  background: green; }
+
+.bgWhite, .NA {
+  border: 2px solid #919191; }
+
+.redcircle {
+  border: 2px solid red;
+}
+
+.todo {
+  display: inline-block; }
+
+.todo::first-letter {
+  text-transform: capitalize; }
+
+.todolist-container {
+  display: table;
+  margin: auto; }
+  .todolist-container li {
+    display: table-row; }
+    .todolist-container li p {
+      padding-bottom: 10px;
+      padding-left: 10px; }
+
+.leftpadding10 {
+  padding-left: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */
