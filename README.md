@@ -1,6 +1,6 @@
 Todoist
 =======
-https://todoist2027.herokuapp.com/
+https://todoist2027.herokuapp.com/todo
 
 Sample todo single page application using AngularJS, Express (Node), PostgreSQL. This app is heroku ready. 
 
